@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-sans text-[15px] leading-relaxed text-muted antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading text-ink;
+  }
+}
+
+@layer components {
+  /* Tiêu đề cột kiểu yanteambuilding: chữ hoa, nền xám nhạt, gạch chân nâu */
+  .yan-heading {
+    @apply relative mb-5 border-b-[3px] border-brand-200 pb-3 font-heading text-base font-bold uppercase tracking-wide text-ink;
+  }
+  .yan-heading::after {
+    content: '';
+    @apply absolute -bottom-[3px] left-0 h-[3px] w-14 bg-brand-500;
+  }
+  .section-title {
+    @apply font-heading text-2xl font-bold uppercase tracking-wide text-ink md:text-3xl;
+  }
+  .link-more {
+    @apply inline-flex items-center gap-1 text-sm font-semibold text-brand-500 transition hover:text-brand-700;
+  }
+  .input {
+    @apply w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-ink outline-none transition placeholder:text-gray-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 disabled:bg-gray-100;
+  }
+  .label {
+    @apply mb-1 block text-sm font-medium text-ink;
+  }
+  .card {
+    @apply rounded-lg border border-gray-200 bg-white shadow-sm;
+  }
+  .prose-content {
+    @apply prose max-w-none prose-headings:font-heading prose-headings:text-ink prose-a:text-brand-500 prose-img:rounded-lg;
+  }
+}
+
+/* Swiper: nút điều hướng & dots theo màu thương hiệu */
+.swiper-pagination-bullet-active {
+  background: #8d5141 !important;
+}
+.hero-swiper .swiper-button-next,
+.hero-swiper .swiper-button-prev {
+  color: #fff;
+}
